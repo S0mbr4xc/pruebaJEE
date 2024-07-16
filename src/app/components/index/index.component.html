@@ -1,6 +1,19 @@
 <h1>Prueba JEE</h1>
 
 <label for="cedula">Cedula:</label>
-<input type="text" name="cedula" required>
+<input type="text" name="cedula" required [(ngModel)]="ci">
 
-<button>Consultar</button>
+<button (click)="listar()">Consultar</button>
+
+<h2>Cliente {{cliente.nombre}}</h2>
+
+<p>deudas</p>
+
+
+@for (de of deudas; track $index) {
+  <ul>
+    <li>Codigo: {{deudas.codigo}}</li>
+    <li>Costo: {{deudas.costo}}</li>
+  </ul>
+}
+
